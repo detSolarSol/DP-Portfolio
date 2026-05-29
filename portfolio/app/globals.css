@@ -1,0 +1,28 @@
+:root {
+  --bg-primary: #1A1A2E;
+  --text-primary: #E0E0E0;
+  --accent: #00FF88;
+  --card-bg: #16213E;
+}
+
+[data-theme="light"] {
+  --bg-primary: #FFFFFF;
+  --text-primary: #1A1A2E;
+  --accent: #00FF88;
+  --card-bg: #F5F5F5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  transition: background-color 0.3s, color 0.3s;
+}
