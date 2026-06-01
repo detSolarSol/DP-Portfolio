@@ -1,14 +1,36 @@
 'use client';
 
 import useInView from '@/app/hooks/useInView';
+import GitHubIcon from './GitHubIcon';
+import TelegramIcon from './TelegramIcon';
+import EmailIcon from './EmailIcon';
+import VKIcon from './VKIcon';
 import styles from './Contacts.module.scss';
 
 const contactsList = [
-  { label: 'GitHub', href: 'https://github.com/твой-username', icon: '💻' },
-  { label: 'Telegram', href: 'https://t.me/твой-username', icon: '📬' },
-  { label: 'Email', href: 'mailto:твой-email@example.com', icon: '📧' },
-  { label: 'VK', href: 'https://vk.com/твой-username', icon: '🌐' },
+  { label: 'GitHub', href: 'https://github.com/твой-username', Icon: GitHubIcon },
+  { label: 'Telegram', href: 'https://t.me/твой-username', Icon: TelegramIcon },
+  { label: 'Email', href: 'mailto:твой-email@example.com', Icon: EmailIcon },
+  { label: 'VK', href: 'https://vk.com/твой-username', Icon: VKIcon },
 ];
+
+const DownloadIcon = ({ className }: { className?: string }) => (
+  <svg
+    className={className}
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+    <polyline points="7 10 12 15 17 10" />
+    <line x1="12" y1="15" x2="12" y2="3" />
+  </svg>
+);
 
 const Contacts = () => {
   const { ref, isVisible } = useInView();
@@ -21,19 +43,29 @@ const Contacts = () => {
     >
       <h2 className={styles.heading}>Контакты</h2>
       <div className={styles.links}>
-        {contactsList.map(contact => (
+        {contactsList.map(({ label, href, Icon }) => (
           <a
-            key={contact.label}
-            href={contact.href}
+            key={label}
+            href={href}
             target="_blank"
             rel="noopener noreferrer"
             className={styles.link}
           >
-            <span className={styles.icon}>{contact.icon}</span>
-            <span className={styles.label}>{contact.label}</span>
+            <div className={styles.circle}>
+              <Icon className={styles.icon} />
+            </div>
+            <span className={styles.label}>{label}</span>
           </a>
         ))}
       </div>
+      <a
+        href="/resume.pdf"
+        download
+        className={styles.resumeBtn}
+      >
+        <DownloadIcon className={styles.downloadIcon} />
+        Скачать резюме
+      </a>
     </section>
   );
 };

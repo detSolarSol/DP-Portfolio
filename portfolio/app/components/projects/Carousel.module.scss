@@ -111,7 +111,7 @@
 .tag {
   padding: 4px 10px;
   border: 1px solid var(--accent);
-  border-radius: 8px;
+  border-radius: 6px;
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
   color: var(--accent);
@@ -123,9 +123,9 @@
   background-color: var(--accent);
   color: #1A1A2E;
   border: none;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 500;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 700;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
 

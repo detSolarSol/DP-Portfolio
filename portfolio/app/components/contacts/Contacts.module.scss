@@ -16,43 +16,83 @@
 .heading {
   font-family: 'JetBrains Mono', monospace;
   font-size: 32px;
-  margin-bottom: 40px;
-  color: var(--accent);
+  margin-bottom: 48px;
+  color: var(--text-primary);
 }
 
 .links {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-
-  @media (max-width: 400px) {
-    grid-template-columns: 1fr;
-  }
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
 }
 
 .link {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
-  padding: 24px;
-  background-color: var(--card-bg);
-  border-radius: 12px;
+  gap: 10px;
   text-decoration: none;
   color: var(--text-primary);
-  transition: transform 0.2s, box-shadow 0.2s;
+}
 
-  &:hover {
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid rgba(224, 224, 224, 0.15);
+  background: none;
+  transition: border-color 0.2s, transform 0.2s;
+
+  .link:hover & {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 255, 136, 0.15);
+    border-color: var(--accent);
   }
 }
 
 .icon {
-  font-size: 32px;
+  width: 24px;
+  height: 24px;
+  color: var(--text-primary);
+  transition: color 0.2s;
+
+  .link:hover & {
+    color: var(--accent);
+  }
 }
 
 .label {
   font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.resumeBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 40px;
+  padding: 14px 32px;
+  background-color: var(--accent);
+  color: #1A1A2E;
+  text-decoration: none;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
   font-size: 14px;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 255, 136, 0.3);
+  }
+}
+
+.downloadIcon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }

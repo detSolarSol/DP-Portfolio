@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { useTheme } from '@/app/context/ThemeContext';
+import SunIcon from './SunIcon';
+import MoonIcon from './MoonIcon';
 import styles from './Navigation.module.scss';
 
 const navItems = [
@@ -47,7 +49,7 @@ const Navigation = () => {
       </ul>
 
       <button className={styles.themeToggle} onClick={toggleTheme} aria-label="Переключить тему">
-        {theme === 'dark' ? '☀️' : '🌙'}
+        {theme === 'dark' ? <SunIcon className={styles.themeIcon} /> : <MoonIcon className={styles.themeIcon} />}
       </button>
     </nav>
   );
