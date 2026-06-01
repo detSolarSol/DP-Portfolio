@@ -1,15 +1,21 @@
 :root {
   --bg-primary: #1A1A2E;
   --text-primary: #E0E0E0;
+  --text-secondary: rgb(224, 224, 224);
+  --text-third: rgb(160, 160, 184);
   --accent: #00FF88;
   --card-bg: #16213E;
+    --border-color: rgba(224, 224, 224, 0.12);
 }
 
 [data-theme="light"] {
-  --bg-primary: #FFFFFF;
+  --bg-primary: #F5F5F7;
   --text-primary: #1A1A2E;
-  --accent: #00FF88;
-  --card-bg: #F5F5F5;
+  --text-secondary: rgb(26, 26, 46);
+  --text-third: rgba(33, 33, 48, 0.87);
+  --accent: #0D7A5C;
+  --card-bg: #FFFFFF;
+    --border-color: rgba(0, 0, 0, 0.15);
 }
 
 * {

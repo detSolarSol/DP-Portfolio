@@ -32,7 +32,7 @@
 }
 
 .block {
-  border: 1px solid #e0e0e01e;
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 36px 24px;
 }
@@ -55,13 +55,13 @@
   line-height: 1.6;
   opacity: 0.85;
   margin-bottom: 4px;
-    color: #e0e0e0e0;
+    color: var(--text-secondary);
 }
 
 .year {
   font-family: 'JetBrains Mono', monospace;
   font-size: 13px;
-  color: #e0e0e0e0;
+  color: var(--text-third);
   // margin-top: 12px;
   opacity: 0.7;
 }

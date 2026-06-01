@@ -27,14 +27,35 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const closeMenu = () => setMenuOpen(false);
+
+  const handleNavClick = (href: string) => {
+    closeMenu();
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
       <a href="#hero" className={styles.logo}>&lt;DP /&gt;</a>
 
+      {/* Оверлей для мобильного меню */}
+      {menuOpen && <div className={styles.overlay} onClick={closeMenu} />}
+
       <ul className={`${styles.menu} ${menuOpen ? styles.open : ''}`}>
         {navItems.map(item => (
           <li key={item.href}>
-            <a href={item.href} onClick={() => setMenuOpen(false)}>{item.label}</a>
+            <a
+              href={item.href}
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick(item.href);
+              }}
+            >
+              {item.label}
+            </a>
           </li>
         ))}
       </ul>

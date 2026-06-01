@@ -14,6 +14,7 @@
 
   @media (min-width: 769px) {
     padding: 16px 100px;
+      justify-content: space-around;
   }
 }
 
@@ -120,5 +121,17 @@
 
   .burger {
     display: flex;
+  }
+}
+
+.overlay {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99;
   }
 }

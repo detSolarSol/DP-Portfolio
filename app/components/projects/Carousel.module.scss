@@ -35,7 +35,7 @@
 }
 
 .card {
-  border: 1px solid #e0e0e01e;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
@@ -70,7 +70,7 @@
 .imagePlaceholder {
   margin: 16px 16px 0 16px;
   height: 180px;
-  border: 1px solid #e0e0e01e;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   display: flex;
   align-items: center;
