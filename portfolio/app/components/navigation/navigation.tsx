@@ -31,15 +31,6 @@ const Navigation = () => {
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
       <a href="#hero" className={styles.logo}>&lt;DP /&gt;</a>
 
-      <button
-        className={styles.burger}
-        onClick={() => setMenuOpen(prev => !prev)}
-        aria-label={menuOpen ? 'Закрыть меню' : 'Открыть меню'}
-        aria-expanded={menuOpen}
-      >
-        <span /><span /><span />
-      </button>
-
       <ul className={`${styles.menu} ${menuOpen ? styles.open : ''}`}>
         {navItems.map(item => (
           <li key={item.href}>
@@ -48,9 +39,19 @@ const Navigation = () => {
         ))}
       </ul>
 
-      <button className={styles.themeToggle} onClick={toggleTheme} aria-label="Переключить тему">
-        {theme === 'dark' ? <SunIcon className={styles.themeIcon} /> : <MoonIcon className={styles.themeIcon} />}
-      </button>
+      <div className={styles.rightGroup}>
+        <button className={styles.themeToggle} onClick={toggleTheme} aria-label="Переключить тему">
+          {theme === 'dark' ? <SunIcon className={styles.themeIcon} /> : <MoonIcon className={styles.themeIcon} />}
+        </button>
+        <button
+          className={styles.burger}
+          onClick={() => setMenuOpen(prev => !prev)}
+          aria-label={menuOpen ? 'Закрыть меню' : 'Открыть меню'}
+          aria-expanded={menuOpen}
+        >
+          <span /><span /><span />
+        </button>
+      </div>
     </nav>
   );
 };

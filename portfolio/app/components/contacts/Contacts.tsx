@@ -8,10 +8,10 @@ import VKIcon from './VKIcon';
 import styles from './Contacts.module.scss';
 
 const contactsList = [
-  { label: 'GitHub', href: 'https://github.com/твой-username', Icon: GitHubIcon },
-  { label: 'Telegram', href: 'https://t.me/твой-username', Icon: TelegramIcon },
-  { label: 'Email', href: 'mailto:твой-email@example.com', Icon: EmailIcon },
-  { label: 'VK', href: 'https://vk.com/твой-username', Icon: VKIcon },
+  { label: 'GitHub', href: 'https://github.com/detSolarSol', Icon: GitHubIcon },
+  { label: 'Telegram', href: 'https://t.me/PLH_FX', Icon: TelegramIcon },
+{ label: 'Email', href: 'mailto:ddan27993@gmail.com', Icon: EmailIcon },
+  { label: 'VK', href: 'https://vk.com/lordplh', Icon: VKIcon },
 ];
 
 const DownloadIcon = ({ className }: { className?: string }) => (

@@ -2,21 +2,17 @@
   position: relative;
   max-width: 100%;
   margin: 0 auto;
-  padding: 0 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  @media (max-width: 768px) {
-    padding: 0;
-  }
+  overflow: hidden;
 }
 
 .viewport {
   overflow: visible;
   width: 100%;
-  max-width: 1180px;
-  padding: 20px 0;
+  max-width: 1300px;
+  padding: 30px 40px;
 
   @media (max-width: 768px) {
     max-width: 100%;
@@ -24,13 +20,18 @@
     padding: 0;
   }
 }
-
 .track {
   display: flex;
   gap: 20px;
   transition: transform 0.5s ease;
   align-items: center;
   padding: 20px 0;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    padding: 8px 0;
+    transform: none !important;
+  }
 }
 
 .card {
@@ -43,13 +44,18 @@
   width: 380px;
 
   @media (max-width: 768px) {
-    width: 100%;
+    width: calc(100% - 32px);
+    margin: 0 16px;
   }
 }
 
 .active {
   opacity: 1;
   transform: scale(1.08);
+
+  @media (max-width: 768px) {
+    transform: scale(1);
+  }
 }
 
 .inactive {
@@ -81,17 +87,29 @@
     color: var(--accent);
     opacity: 0.7;
     letter-spacing: 3px;
+
+    @media (max-width: 768px) {
+      font-size: 36px;
+    }
   }
 }
 
 .info {
   padding: 16px;
+
+  @media (max-width: 768px) {
+    padding: 12px;
+  }
 }
 
 .title {
   font-family: 'JetBrains Mono', monospace;
   font-size: 18px;
   margin-bottom: 8px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 }
 
 .description {
@@ -99,6 +117,10 @@
   opacity: 0.8;
   margin-bottom: 12px;
   line-height: 1.5;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
 }
 
 .tags {
@@ -129,9 +151,20 @@
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
 
+  @media (max-width: 768px) {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    padding: 12px 0;
+  }
+
   &:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 16px rgba(0, 255, 136, 0.3);
+
+    @media (max-width: 768px) {
+      transform: none;
+    }
   }
 }
 
@@ -156,4 +189,13 @@
 .activeDot {
   opacity: 1;
   background-color: var(--accent);
+}
+
+.spacer {
+  width: 380px;
+  flex-shrink: 0;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }

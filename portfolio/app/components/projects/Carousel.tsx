@@ -13,12 +13,19 @@ const CARD_WIDTH = 380;
 const GAP = 20;
 const STEP = CARD_WIDTH + GAP;
 
-// Метки для плейсхолдеров — порядок соответствует порядку проектов
 const placeholderLabels = ['Оплата', 'Подпись', 'Погода', 'ToDo'];
 
 const Carousel = ({ projects, onProjectClick }: CarouselProps) => {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
 
   useEffect(() => {
     if (paused) return;
@@ -46,6 +53,9 @@ const Carousel = ({ projects, onProjectClick }: CarouselProps) => {
         >
           {projects.map((project, index) => {
             const isActive = index === current;
+            // На мобилке показываем только активную карточку
+            if (isMobile && !isActive) return null;
+            
             return (
               <div
                 key={project.id}
@@ -62,6 +72,7 @@ const Carousel = ({ projects, onProjectClick }: CarouselProps) => {
                     {project.technologies.map(tech => (
                       <span key={tech} className={styles.tag}>{tech}</span>
                     ))}
+                            <div className={styles.spacer} />
                   </div>
                   {isActive && (
                     <button className={styles.viewButton}>Посмотреть</button>
@@ -82,6 +93,7 @@ const Carousel = ({ projects, onProjectClick }: CarouselProps) => {
             aria-label={`Проект ${index + 1}`}
           />
         ))}
+
       </div>
     </div>
   );
