@@ -23,7 +23,7 @@ const technologies: Technology[] = [
   {
     name: 'React',
     description: 'Библиотека для построения пользовательских интерфейсов и SPA.',
-    docsUrl: 'https://react.dev/docs',
+    docsUrl: 'https://react.dev',
   },
   {
     name: 'SCSS',
